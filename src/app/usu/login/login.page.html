@@ -6,17 +6,24 @@
  
   <div class="login-wrapper">
       <div class="center">  
+            <ion-icon 
+            style="margin-left: 85px;
+                  margin-top: 80px;
+                  background: #414535;
+                  border-radius: 100%;
+                  font-size: 200px;"
+            name="people-circle-outline"></ion-icon>
             <ion-item>
-              
-              <ion-input type="text"  [(ngModel)]="email">email</ion-input>
+          
+              <ion-input type="text"  [(ngModel)]="email">Email</ion-input>
             </ion-item>
             <ion-item>
         
-              <ion-input type="password"  [(ngModel)]="senha">senha</ion-input>
+              <ion-input type="password"  [(ngModel)]="senha">Senha</ion-input>
             </ion-item>
             <div class="buttons">
-              <ion-button expand="block" type="submit" color="tertiary"  (click)='loginUsuario()'>Login</ion-button>
-              <ion-button expand="block"  color="secondary" routerLink="/inserir">Registrar</ion-button>
+              <ion-button expand="block" type="submit" color="danger"  (click)='loginUsuario()'>Entrar!</ion-button>
+              <ion-button expand="block"  color="light" routerLink="/inserir">Registrar-se</ion-button>
             </div>
       </div>
   </div>

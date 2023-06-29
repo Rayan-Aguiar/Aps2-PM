@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Platform } from '@ionic/angular';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -12,8 +15,14 @@ export class AppComponent {
     { title: 'Sair', url: '/folder/outbox', icon: 'paper-plane' },
   ];
 
-  constructor() {
+  constructor(
+    private router:Router,
+    private platform: Platform
+  ) { this.initializeApp(); }
 
-
+  initializeApp(){
+    this.platform.ready().then(() => {
+      this.router.navigateByUrl('splash');
+    });
   }
 }

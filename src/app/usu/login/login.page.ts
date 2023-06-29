@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
       this.autenticacaoService.loginNoFirebase(this.email, this.senha)
       .then((res) => {
         this.nome = this.extrairNomeDoEmail(this.email);
-        this.router.navigate(['folder/'+this.nome]);
+        this.router.navigate(['folder/api']);
         this.mensagem ='Login Realizado!';
           this.exibeMensagem();
       }).catch((error) => {

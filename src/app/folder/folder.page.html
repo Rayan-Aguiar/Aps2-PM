@@ -10,7 +10,27 @@
 <ion-content [fullscreen]="true">
 
   <div *ngIf="folder === 'api'">
-    API.</div>
+    <ion-refresher slot="fixed" (ionRefresh)="efeitoRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-card *ngFor="let show of lista_shows">
+      <ion-card-header>
+        <ion-card-title>{{ show.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-img [src]="show.image.medium"></ion-img>
+      <ion-card-content>
+        <h3>Genres: {{ show.genres }}</h3>
+        <p>Language Original: {{ show.language }}</p>
+      </ion-card-content>
+      <ion-card-content>
+        <p>Description: <br> {{ show.summary }}</p>
+        <!-- Mais informações sobre o show -->
+      </ion-card-content>
+    </ion-card>
+    <ion-infinite-scroll (ionInfinite)="efeitoScrollInfinito($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
 
   <div *ngIf="folder === 'sobre-mim'">
   
